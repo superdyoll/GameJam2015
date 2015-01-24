@@ -4,19 +4,19 @@ using System.Collections;
 public static class Level{
 	private static int level = 0;
 
-	public static int GetLevel (){
+	public static int getLevel (){
 		return level;
 	}
 
-	public static void SetLevel (int newLevel){
+	public static void setLevel (int newLevel){
 		level = newLevel;
 	}
 
-	public static void IncreaseLevel(){
+	public static void increaseLevel(){
 		level ++;
 	}
 
-	public static void IncreaseLevel(int increaseAmount){
+	public static void increaseLevel(int increaseAmount){
 		level = level + increaseAmount;
 	}
 }

@@ -5,6 +5,7 @@ public class Projectile : MonoBehaviour{
 	private int range, radius, bounce, speed;
 	private Vector3 direction;
 	private GameObject player;
+	private Animation explosion;
 
 	public void Go(int range, int radius, int bounce, int speed, Vector2 direction){
 		this.range = range;
@@ -12,6 +13,7 @@ public class Projectile : MonoBehaviour{
 		this.bounce = bounce;
 		this.speed = speed;
 		this.direction = direction;
+		explosion = gameObject.GetComponent<Animation> ();
 		player = GameObject.Find ("Player");
 	}
 
@@ -21,12 +23,11 @@ public class Projectile : MonoBehaviour{
 		float distanceToPlayer = Vector3.Distance (transform.position, player.transform.position); 
 
 		if(distanceToPlayer > range){
-			Destroy(this.gameObject);
-		}
-	}
+			explosion.Play();
 
-	void OnCollisionEnter(Collision enemy) {
-		enemy.gameObject.GetComponent<Dino>().Damage(2);
-		Destroy (this.gameObject);
+			if(!explosion.isPlaying){
+				Destroy(this.gameObject);
+			}
+		}
 	}
 }
