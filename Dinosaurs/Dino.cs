@@ -37,13 +37,11 @@ public abstract class Dino : MonoBehaviour {
 			level = gameLevel + rndLevel;
 		}
 		
-		Debug.Log (level + "");
-		
-		health = (int)Math.Pow (baseHealth, level);
-		speed = (int)Math.Pow (baseSpeed, level);
-		survivability = (int)Math.Pow (baseSurvivability, level);
-		explosive = (int)Math.Pow (baseExplosive, level);
-		exp = (int)Math.Pow (baseExp, level);
+		health 		= (int)Math.Pow (baseHealth, level);
+		speed 		= (int)Math.Pow (baseSpeed, level);
+		survivability 	= (int)Math.Pow (baseSurvivability, level);
+		explosive 	= (int)Math.Pow (baseExplosive, level);
+		exp 		= (int)Math.Pow (baseExp, level);
 	}
 	
 	// Update is called once per frame
