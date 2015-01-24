@@ -3,23 +3,21 @@ using System.Collections;
 
 public class DinoAI : MonoBehaviour {
 	private Dino dinoStats;
-	private Vector3 playerPosition;
-	private Player player;
+	private Vector2 playerPosition;
 
 	public void InsertBrain (Dino dinoStats) {
 		this.dinoStats = dinoStats;
-		player = GameObject.Find ("Player").GetComponent<Player> ();
 	}
 
 	void Update () {
-		playerPosition = player.GetPosition ();
-		Vector3 currentPosition = new Vector2 (transform.position.x, transform.position.y);
+		/*playerPosition = Level.GetPlayer ().GetPosition ();
+		Vector2 currentPosition = new Vector2 (transform.position.x, transform.position.y);
 		float distanceToPlayer = Vector2.Distance (playerPosition, currentPosition);
 
-		//if(distanceToPlayer > dinoStats.weapon.range){
-			Vector3 directionToPlayer = playerPosition - currentPosition;
+		if(distanceToPlayer > dinoStats.weapon.range){
+			Vector2 directionToPlayer = playerPosition - currentPosition;
 			directionToPlayer.Normalize ();
-			transform.position += 0.1f * dinoStats.speed * directionToPlayer;
-		//}
+			this.transform.position += 0.1f * dinoStats.speed * directionToPlayer;
+		}*/
 	}
 }
