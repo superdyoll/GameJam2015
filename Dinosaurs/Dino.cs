@@ -16,40 +16,22 @@ public abstract class Dino {
 	public int explosive { get; set; }
 	public int exp { get; set; }
 
-	public bool playerControlled{ get; set; }
-
 	int level { get; set; }
 
 	public Dino() {
-		playerControlled = false;
-
-		if (!playerControlled) {
-			int gameLevel = 1;
+		int gameLevel = 1;
 		
-			System.Random rnd = new System.Random ();
-			int rndLevel = rnd.Next (-2, 2);
-
-			int boss = rnd.Next (20);
-			if (boss == 13) {
-				level = gameLevel + 5;
-			}
-			else {
-				level = gameLevel + rndLevel;
-			}
+		System.Random rnd = new System.Random ();
+		int rndLevel = rnd.Next (-2, 2);
+		int boss = rnd.Next (20);
 		
-			health = (int)Math.Pow (baseHealth, level);
-			speed = (int)Math.Pow (baseSpeed, level);
-			survivability = (int)Math.Pow (baseSurvivability, level);
-			explosive = (int)Math.Pow (baseExplosive, level);
-			exp = (int)Math.Pow (baseExp, level);
-		} else {
-			//Needs to change 'level' with playey.getStat
-			health = (int)Math.Pow (baseHealth, level);
-			speed = (int)Math.Pow (baseSpeed, level);
-			survivability = (int)Math.Pow (baseSurvivability, level);
-			explosive = (int)Math.Pow (baseExplosive, level);
-			exp = (int)Math.Pow (baseExp, level);
-		}
+		level = gameLevel + rndLevel;
+		
+		health 			= (int) Math.Pow (baseHealth, level);
+		speed 			= (int) Math.Pow (baseSpeed, level);
+		survivability 	= (int) Math.Pow (baseSurvivability, level);
+		explosive 		= (int) Math.Pow (baseExplosive, level);
+		exp 			= (int) Math.Pow (baseExp, level);
 	}
 
 	// Use this for initialization

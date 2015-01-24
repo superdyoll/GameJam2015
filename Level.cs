@@ -2,7 +2,6 @@
 using System.Collections;
 
 public static class Level{
-
 	private static int level = 0;
 
 	public static int getLevel (){
