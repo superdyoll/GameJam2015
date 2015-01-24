@@ -16,8 +16,6 @@ public abstract class Dino {
 	public int explosive { get; set; }
 	public int exp { get; set; }
 
-	public Boolean playerControlled{ get; set; }
-
 	int level { get; set; }
 
 	public Dino() {
