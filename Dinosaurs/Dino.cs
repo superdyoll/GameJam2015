@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public abstract class Dino {
+public abstract class Dino : MonoBehaviour {
 
 	abstract protected int baseHealth        { get; }
 	abstract protected int baseSpeed         { get; }
@@ -39,4 +39,18 @@ public abstract class Dino {
 	
 	// Update is called once per frame
 	abstract protected void Update ();
+
+	public void Damage(int amount) {
+		health -= amount;
+
+		if (health <= 0) {
+			this.die();
+		}
+	}
+
+	public void die() {
+		Destroy (this.gameObject);
+
+		//Add explosion stuff here
+	}
 }

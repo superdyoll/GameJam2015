@@ -24,4 +24,9 @@ public class Projectile : MonoBehaviour{
 			Destroy(this.gameObject);
 		}
 	}
+
+	void OnCollisionEnter(Collision enemy) {
+		enemy.gameObject.GetComponent<Dino>().Damage(2);
+		Destroy (this.gameObject);
+	}
 }
