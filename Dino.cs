@@ -10,11 +10,13 @@ public abstract class Dino {
 	abstract protected int baseExplosive     { get; }
 	abstract protected int baseExp           { get; }
 
-	int health { get; set; }
-	int speed { get; set;}
-	int survivability { get; set; }
-	int explosive { get; set; }
-	int exp { get; set; }
+	public int health { get; set; }
+	public int speed { get; set;}
+	public int survivability { get; set; }
+	public int explosive { get; set; }
+	public int exp { get; set; }
+
+	public Boolean playerControlled{ get {return false}; set; }
 
 	int level { get; set; }
 
