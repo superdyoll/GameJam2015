@@ -17,6 +17,7 @@ public class Diplodofortress : Dino {
 
 
 	}
+
 	
 	// Update is called once per frame
 	protected override void Update () {
