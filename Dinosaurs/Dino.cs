@@ -10,6 +10,8 @@ public abstract class Dino : MonoBehaviour {
 	abstract protected int baseExplosive     { get; }
 	abstract protected int baseExp           { get; }
 
+	abstract protected Color colour { get; }
+
 	public int health { get; set; }
 	public int speed { get; set;}
 	public int survivability { get; set; }
@@ -21,7 +23,9 @@ public abstract class Dino : MonoBehaviour {
 	// Use this for initialization
 	protected void Start () {
 		double gameLevel = 1;
-		
+
+		renderer.material.color = colour;
+
 		System.Random rnd = new System.Random ();
 		int rndLevel = rnd.Next (-1, 1);
 		int boss = rnd.Next (20);
@@ -43,7 +47,8 @@ public abstract class Dino : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	abstract protected void Update ();
+	protected void Update () {
+	}
 
 	public void Damage(int amount) {
 		health -= amount;
