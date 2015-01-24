@@ -11,12 +11,7 @@ public class Diplodofortress : Dino {
 	protected override int baseExplosive     { get { return 4;  } }
 	protected override int baseExp           { get { return 2;  } }
 
-	// Use this for initialization
-	protected override void Start () {
 
-
-
-	}
 	
 	// Update is called once per frame
 	protected override void Update () {
