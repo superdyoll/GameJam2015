@@ -5,19 +5,19 @@ public static class Level{
 
 	private static int level = 0;
 
-	public static int getLevel (){
+	public static int GetLevel (){
 		return level;
 	}
 
-	public static void setLevel (int newLevel){
+	public static void SetLevel (int newLevel){
 		level = newLevel;
 	}
 
-	public static void increaseLevel(){
+	public static void IncreaseLevel(){
 		level ++;
 	}
 
-	public static void increaseLevel(int increaseAmount){
+	public static void IncreaseLevel(int increaseAmount){
 		level = level + increaseAmount;
 	}
 }
